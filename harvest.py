@@ -137,10 +137,13 @@ class Melon(object):
 
 
 def make_melon(melon_info, melon_types):
+    """Creates instances of Melon class from lines in file"""
+
     return Melon(melon_types[melon_info[5]], melon_info[1], melon_info[3], melon_info[-1], melon_info[-4])
 
 
 def make_melons_from_file(filename):
+    """Creates list of melon objects from input file"""
 
     melon_list = []
 
@@ -152,10 +155,10 @@ def make_melons_from_file(filename):
 
     return melon_list
 
+# test
 melon_types = make_melon_type_lookup(make_melon_types())
 melon_list = make_melons_from_file('harvest_log.txt')
 
-# test
 print melon_list[0].color_rating
 print melon_list[0].melon_type.code
 print melon_list[0].melon_type.is_seedless
